@@ -1,0 +1,36 @@
+.header {
+  @extend %internal-padding-top;
+  @extend %internal-padding-bottom;
+
+  background: var(--color-google-800);
+
+  &__menu {
+    @include horizontalPaddings(16px);
+
+    display: flex;
+    gap: 16px;
+    justify-content: start;
+    width: 100vw;
+
+    @include upto(tablet) {
+      @include horizontalPaddings(32px);
+
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    &-item {
+      color: var(--color-sand);
+      font-family: var(--font-family-base);
+      font-weight: 700;
+      letter-spacing: rem(1px);
+      line-height: rem(10px);
+      text-transform: uppercase;
+      transition: text-shadow 0.5s linear;
+
+      &:hover {
+        text-shadow: 0 0 1px var(--color-sand);
+      }
+    }
+  }
+}
